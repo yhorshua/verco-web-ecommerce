@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,25 +16,24 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  // Base classes for a premium rounded-full style button
-  const baseClasses = 'inline-flex items-center justify-center font-black uppercase tracking-widest text-xs rounded-full transition-all duration-350 cursor-pointer select-none active:scale-95 focus:outline-none';
+  const baseClasses =
+    'inline-flex items-center justify-center font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300 cursor-pointer select-none active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#E70033]/35 disabled:opacity-50 disabled:cursor-not-allowed';
 
-  // Premium cobalt & bone styling mapping
   const variants = {
-    // Primary: Deep cobalt blue `#1a3e6a` with white text
-    primary: 'bg-[#1a3e6a] hover:bg-[#132f52] text-white shadow-[0_4px_16px_rgba(26,62,106,0.18)] hover:shadow-[0_6px_22px_rgba(26,62,106,0.3)]',
-    
-    // Secondary: Pure bone `#faf9f6` with cobalt blue `#1a3e6a` text and border
-    secondary: 'bg-[#faf9f6] text-[#1a3e6a] border border-[#1a3e6a]/20 hover:bg-[#f1efe9] hover:border-[#1a3e6a]/40 shadow-sm',
-    
-    // Outline: Transparent background, cobalt border, cobalt text
-    outline: 'bg-transparent text-[#1a3e6a] border border-[#1a3e6a] hover:bg-[#1a3e6a]/5',
-    
-    // Ghost: Subtle hover state
-    ghost: 'bg-transparent text-[#1a3e6a] hover:bg-[#faf9f6] hover:text-[#132f52]',
-    
-    // Danger: Precision red
-    danger: 'bg-rose-600 hover:bg-rose-700 text-white shadow-md',
+    primary:
+      'bg-[#283E6A] hover:bg-[#E70033] text-white shadow-[0_4px_16px_rgba(40,62,106,0.18)] hover:shadow-[0_6px_22px_rgba(231,0,51,0.25)]',
+
+    secondary:
+      'bg-white text-[#283E6A] border border-[#283E6A]/20 hover:bg-[#283E6A] hover:text-white hover:border-[#283E6A] shadow-sm',
+
+    outline:
+      'bg-transparent text-[#283E6A] border border-[#283E6A] hover:bg-[#283E6A] hover:text-white',
+
+    ghost:
+      'bg-transparent text-[#283E6A] hover:bg-[#283E6A]/5 hover:text-[#E70033]',
+
+    danger:
+      'bg-[#E70033] hover:bg-[#b80028] text-white shadow-md',
   };
 
   const sizes = {

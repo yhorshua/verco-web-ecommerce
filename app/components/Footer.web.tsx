@@ -1,5 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, MessageSquare, Flame, Sparkles } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageSquare,
+  Flame,
+  Sparkles,
+} from 'lucide-react';
 import Swal from 'sweetalert2';
 
 export default function Footer() {
@@ -7,128 +16,153 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!email) return;
 
-    // SweetAlert notification for subscription confirmation in Cobalt/Bone theme
     Swal.fire({
-      title: '¡Suscripción Exitosa!',
-      text: 'Te has unido al Club APEX SPORT. Recibirás un cupón de 15% de descuento directo en tu correo.',
+      title: '¡Suscripción exitosa!',
+      text: 'Te has unido a la comunidad VERCO. Recibirás novedades, promociones y lanzamientos exclusivos en tu correo.',
       icon: 'success',
       background: '#ffffff',
-      color: '#1c1917',
-      confirmButtonColor: '#1a3e6a', // deep cobalt blue #1a3e6a
+      color: '#283E6A',
+      confirmButtonColor: '#E70033',
       customClass: {
-        popup: 'border border-stone-200 rounded-[28px]',
-        confirmButton: 'rounded-full uppercase tracking-wider text-xs font-black px-6 py-3.5 text-white font-sans cursor-pointer'
-      }
+        popup: 'border border-[#283E6A]/20 rounded-[28px]',
+        confirmButton:
+          'rounded-full uppercase tracking-wider text-xs font-black px-6 py-3.5 text-white font-sans cursor-pointer',
+      },
     });
 
     setEmail('');
   };
 
   return (
-    <footer className="bg-[#faf9f6] border-t border-stone-200 text-stone-800 pt-16 pb-8" id="footer-section">
+    <footer
+      className="bg-[#283E6A] border-t border-[#283E6A] text-white pt-16 pb-8"
+      id="footer-section"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Columns Grid */}
+        {/* Columnas principales */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
-          {/* Column 1: Store info, identity & contact info */}
+          {/* Columna 1 */}
           <div className="space-y-4 text-left">
             <div className="flex items-center gap-1">
-              <span className="font-extrabold text-2xl tracking-tighter bg-gradient-to-r from-blue-900 via-[#1a3e6a] to-blue-600 bg-clip-text text-transparent">
-                APEX
-              </span>
-              <span className="font-black text-2xl tracking-tighter text-stone-900">
-                SPORT
+              <span className="font-extrabold text-2xl tracking-tighter text-white">
+                VERCO
               </span>
             </div>
-            
-            <p className="text-stone-600 text-xs leading-relaxed max-w-sm font-sans tracking-tight">
-              Líderes en calzado de alta tecnología para atletismo, maratón y entrenamientos de alta intensidad. Representamos el rendimiento puro inspirado en Adidas, Puma y Nike para atletas sin límites.
+
+            <p className="text-white/75 text-xs leading-relaxed max-w-sm font-sans tracking-tight">
+              Tienda especializada en calzado, ropa y accesorios deportivos,
+              orientada a brindar productos modernos, cómodos y funcionales para
+              cada estilo de vida.
             </p>
 
-            <div className="space-y-2.5 text-xs text-stone-600 font-mono">
-              <div className="flex items-center gap-2.5 hover:text-[#1a3e6a] transition-colors cursor-pointer">
-                <MapPin className="w-4 h-4 text-[#1a3e6a] flex-shrink-0" />
-                <span>Av. de la Victoria 1050, Ciudad Deportiva</span>
+            <div className="space-y-2.5 text-xs text-white/75 font-mono">
+              <div className="flex items-center gap-2.5 hover:text-[#E70033] transition-colors cursor-pointer">
+                <MapPin className="w-4 h-4 text-[#E70033] flex-shrink-0" />
+                <span>Lima, Perú</span>
               </div>
-              <div className="flex items-center gap-2.5 hover:text-[#1a3e6a] transition-colors cursor-pointer">
-                <Phone className="w-4 h-4 text-[#1a3e6a] flex-shrink-0" />
-                <span>+54 9 11 3456-7890</span>
+
+              <div className="flex items-center gap-2.5 hover:text-[#E70033] transition-colors cursor-pointer">
+                <Phone className="w-4 h-4 text-[#E70033] flex-shrink-0" />
+                <span>+51 900 000 000</span>
               </div>
-              <div className="flex items-center gap-2.5 hover:text-[#1a3e6a] transition-colors cursor-pointer">
-                <Mail className="w-4 h-4 text-[#1a3e6a] flex-shrink-0" />
-                <span>soporte@apexsport.com</span>
+
+              <div className="flex items-center gap-2.5 hover:text-[#E70033] transition-colors cursor-pointer">
+                <Mail className="w-4 h-4 text-[#E70033] flex-shrink-0" />
+                <span>soporte@verco.online</span>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Categories quick links */}
+          {/* Columna 2 */}
           <div className="space-y-4 text-left">
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-[#1a3e6a]">
-              CATEGORÍAS PREMIUM
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-white">
+              CATEGORÍAS
             </h3>
-            <ul className="space-y-2 text-xs text-stone-600 font-mono">
+
+            <ul className="space-y-2 text-xs text-white/75 font-mono">
               <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors">Calzado de Competición</a>
-              </li>
-              <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors">Zapatillas Fibra de Carbono</a>
-              </li>
-              <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors font-semibold flex items-center gap-1">
-                  <Flame className="w-3.5 h-3.5 text-blue-500 fill-blue-500" /> Colección Maratón
+                <a href="#productos" className="hover:text-[#E70033] transition-colors">
+                  Calzado deportivo
                 </a>
               </li>
               <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors">Prendas de Compresión Dry-Fit</a>
+                <a href="#productos" className="hover:text-[#E70033] transition-colors">
+                  Zapatillas urbanas
+                </a>
               </li>
               <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors">Indumentaria Activa Nike/Puma</a>
+                <a
+                  href="#productos"
+                  className="hover:text-[#E70033] transition-colors font-semibold flex items-center gap-1"
+                >
+                  <Flame className="w-3.5 h-3.5 text-[#E70033] fill-[#E70033]" />
+                  Colecciones destacadas
+                </a>
               </li>
               <li>
-                <a href="#productos" className="hover:text-[#1a3e6a] transition-colors">Accesorios e Hidratación Pro</a>
+                <a href="#productos" className="hover:text-[#E70033] transition-colors">
+                  Ropa deportiva
+                </a>
+              </li>
+              <li>
+                <a href="#productos" className="hover:text-[#E70033] transition-colors">
+                  Accesorios
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Corporate Info links */}
+          {/* Columna 3 */}
           <div className="space-y-4 text-left">
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-[#1a3e6a]">
-              EXPLORAR APEX
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-white">
+              INFORMACIÓN
             </h3>
-            <ul className="space-y-2 text-xs text-stone-600 font-mono">
+
+            <ul className="space-y-2 text-xs text-white/75 font-mono">
               <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Sobre Nosotros</a>
+                <a href="#" className="hover:text-[#E70033] transition-colors">
+                  Sobre nosotros
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Garantía de Autenticidad</a>
+                <a href="#" className="hover:text-[#E70033] transition-colors">
+                  Guía de tallas
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Programa de Atletas Club</a>
+                <a href="#" className="hover:text-[#E70033] transition-colors">
+                  Cambios y devoluciones
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Guía Inteligente de Tallas</a>
+                <a href="#" className="hover:text-[#E70033] transition-colors">
+                  Preguntas frecuentes
+                </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Políticas de Devolución Fáciles</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#1a3e6a] transition-colors">Preguntas Frecuentes FAQ</a>
+                <a
+                  href="/politica-privacidad"
+                  className="hover:text-[#E70033] transition-colors"
+                >
+                  Política de privacidad
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter sign-up, subscription */}
+          {/* Columna 4 */}
           <div className="space-y-4 text-left">
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-[#1a3e6a] flex items-center gap-1.5">
-              <span>ÚNETE AL SQUAD</span>
-              <Sparkles className="w-3.5 h-3.5 text-[#1a3e6a] animate-pulse" />
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-white flex items-center gap-1.5">
+              <span>ÚNETE A VERCO</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#E70033] animate-pulse" />
             </h3>
-            
-            <p className="text-stone-600 text-xs leading-relaxed font-sans tracking-tight">
-              Suscríbete para enterarte de lanzamientos VIP, zapatillas exclusivas de edición limitada y ofertas que vuelan rápido.
+
+            <p className="text-white/75 text-xs leading-relaxed font-sans tracking-tight">
+              Suscríbete para recibir novedades, promociones, lanzamientos y
+              ofertas especiales.
             </p>
 
             <form onSubmit={handleSubscribe} className="space-y-2.5">
@@ -139,39 +173,48 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Introduce tu correo electrónico"
-                  className="w-full bg-white border border-stone-250 focus:border-[#1a3e6a] focus:outline-none p-3.5 pr-10 text-xs font-mono text-stone-800 rounded-xl"
+                  className="w-full bg-white border border-white focus:border-[#E70033] focus:outline-none p-3.5 pr-10 text-xs font-mono text-[#283E6A] rounded-xl placeholder-[#283E6A]/45"
                 />
+
                 <button
                   type="submit"
-                  className="absolute right-3 top-3.5 p-1 text-[#1a3e6a] hover:text-[#132f52] transition-colors cursor-pointer"
-                  title="Suscribirse al boletín"
+                  className="absolute right-3 top-3.5 p-1 text-[#E70033] hover:text-[#283E6A] transition-colors cursor-pointer"
+                  title="Suscribirse"
                 >
                   <MessageSquare className="w-4 h-4" />
                 </button>
               </div>
-              <p className="text-[10px] text-stone-500 font-sans">
-                Cupón instantáneo del <strong className="text-stone-800">15% de Descuento</strong> disponible al suscribirte hoy.
+
+              <p className="text-[10px] text-white/60 font-sans">
+                Recibe novedades y promociones exclusivas de VERCO.
               </p>
             </form>
           </div>
-
         </div>
 
-        {/* Center line decoration */}
-        <div className="border-t border-stone-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[10px] text-stone-500 font-mono tracking-tight text-center md:text-left">
-            © {new Date().getFullYear()} APEX SPORT INC. TODOS LOS DERECHOS RESERVADOS. PROYECCIÓN ATLETAS DE ÉLITE S.A.
+        {/* Línea inferior */}
+        <div className="border-t border-white/15 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[10px] text-white/60 font-mono tracking-tight text-center md:text-left">
+            © {new Date().getFullYear()} VERCO. TODOS LOS DERECHOS RESERVADOS.
           </p>
 
-          <div className="flex gap-4 text-[10px] text-stone-500 font-mono justify-center">
-            <a href="#" className="hover:text-[#1a3e6a] transition-colors">POLÍTICAS DE PRIVACIDAD</a>
+          <div className="flex gap-4 text-[10px] text-white/60 font-mono justify-center">
+            <a
+              href="/politica-privacidad"
+              className="hover:text-[#E70033] transition-colors"
+            >
+              POLÍTICA DE PRIVACIDAD
+            </a>
             <span>•</span>
-            <a href="#" className="hover:text-[#1a3e6a] transition-colors">TÉRMINOS Y CONDICIONES</a>
+            <a href="#" className="hover:text-[#E70033] transition-colors">
+              TÉRMINOS Y CONDICIONES
+            </a>
             <span>•</span>
-            <a href="#" className="hover:text-[#1a3e6a] transition-colors">MAPA DEL SITIO</a>
+            <a href="#" className="hover:text-[#E70033] transition-colors">
+              MAPA DEL SITIO
+            </a>
           </div>
         </div>
-
       </div>
     </footer>
   );

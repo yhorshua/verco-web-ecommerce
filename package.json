@@ -3,13 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:web": "next dev",
-    "build:web": "next build",
-    "start:web": "next start",
-    "dev:mobile": "cross-env EXPO_NO_DEPENDENCY_VALIDATION=1 expo start",
-    "dev:mobile:clear": "cross-env EXPO_NO_DEPENDENCY_VALIDATION=1 expo start --clear",
-    "android": "cross-env EXPO_NO_DEPENDENCY_VALIDATION=1 expo start --android",
-    "ios": "cross-env EXPO_NO_DEPENDENCY_VALIDATION=1 expo start --ios",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "web:expo": "expo start --web",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"

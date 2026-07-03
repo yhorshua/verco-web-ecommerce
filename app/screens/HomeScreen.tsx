@@ -13,8 +13,8 @@ import {
   Activity,
 } from 'lucide-react';
 
-import Hero from '../components/Hero.web';
-import ProductCard from '../components/shared/ProductCard.web';
+import Hero from '../components/Hero';
+import ProductCard from '../components/shared/ProductCard';
 import { Product } from '../types';
 
 interface HomeScreenProps {

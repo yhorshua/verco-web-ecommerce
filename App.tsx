@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-import Navbar from './app/components/Navbar.web';
-import CartDrawer from './app/components/CartDrawer.web';
-import Footer from './app/components/Footer.web';
-import VirtualTryOnModal from './app/components/VirtualTryOnModal.web';
+import Navbar from './app/components/Navbar';
+import CartDrawer from './app/components/CartDrawer';
+import Footer from './app/components/Footer';
+import VirtualTryOnModal from './app/components/VirtualTryOnModal';
 
-import HomeScreen from './app/screens/HomeScreen.web';
-import ProductScreen from './app/screens/ProductScreen.web';
+import HomeScreen from './app/screens/HomeScreen';
+import ProductScreen from './app/screens/ProductScreen';
 
 import { products } from './app/data/products';
 import { Product, CartItem } from './app/types';
